@@ -61,7 +61,7 @@
         }
         input[type="email"] {
             width: 100%;
-            padding: 1rem 1.5rem;
+            padding: 1rem 4.5rem 1rem 1.5rem;
             border: 1px solid hsl(0, 36%, 70%);
             border-radius: 50px;
             background: transparent;
@@ -79,6 +79,7 @@
             border-radius: 50px;
             background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
             cursor: pointer;
+
         }
         .image-container {
             width: 100%;
@@ -145,7 +146,17 @@
                 margin-bottom: 3rem;
             }
             .form-wrapper {
+                position: relative;
+                width: 100%;
                 max-width: 400px;
+            }
+            .input-wrapper {
+              display: grid;
+              grid-template-columns: 1fr auto auto;
+              align-items: center;
+              border: 1px solid hsl(0, 36%, 70%);
+              border-radius: 28px;
+            overflow: hidden;
             }
             input[type="email"] {
                 padding: 1rem 2rem;

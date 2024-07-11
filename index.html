@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 16px;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .left-section {
+      flex: 4;
+      padding: 60px 80px 60px 120px;
+    }
+    .right-section {
+      flex: 4;
+      background-image: url('hero-desktop.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .logo {
+      margin-bottom: 120px;
+    }
+    h1 {
+      font-size: 60px;
+      letter-spacing: 10px;
+      margin-bottom: 20px;
+    }
+    h1 span {
+      color: hsl(0, 36%, 70%);
+      font-weight: 300;
+    }
+    p {
+      color: hsl(0, 36%, 70%);
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+    .input-group {
+      position: relative;
+      max-width: 400px;
+    }
+    input[type="email"] {
+      background-color: transparent;
+      border: 1px solid hsl(0, 36%, 70%);
+      border-radius: 50px;
+      font-size: 16px;
+      color: hsl(0, 6%, 24%);
+      padding: 15px 30px;
+      width: 80%;
+    }
+    input[type="email"]::placeholder {
+      color: hsl(0, 36%, 70%);
+    }
+    button {
+      background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      border: none;
+      border-radius: 50px;
+      box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.5);
+      padding: 15px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100px;
+    }
+    button:hover {
+      background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
+      box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.7);
+      cursor: pointer;
+    }
+    @media screen and (max-width: 767px) {
+      .container {
+        flex-direction: column;
+      }
+      .logo {
+        margin: 30px;
+      }
+      .right-section {
+        min-height: 300px;
+        background-image: url('hero-mobile.jpg');
+        order: -1;
+      }
+      .left-section {
+        padding: 60px 40px;
+        text-align: center;
+      }
+      .input-group {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <img src="logo.svg" alt="logo" class="logo">
+      <h1>
+        <span>WE'RE</span><br>
+        COMING<br>
+        SOON
+      </h1>
+      <p>Hello fellow shoppers! We're currently building our new<br/>fashion store. Add your email below to stay up-to-date with<br/>announcements and our launch deals.</p>
+      <div class="input-group">
+        <input type="email" placeholder="Email Address">
+        <button><img src="icon-arrow.svg" alt="submit"></button>
+      </div>
+    </div>
+    <div class="right-section"></div>
+  </div>
+</body>
+</html>

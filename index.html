@@ -58,12 +58,18 @@
         .form-wrapper {
             position: relative;
             width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .input-wrapper {
+            position: relative;
+            width: 100%;
         }
         input[type="email"] {
             width: 100%;
             padding: 1rem 4.5rem 1rem 1.5rem;
             border: 1px solid hsl(0, 36%, 70%);
-            border-radius: 50px;
+            border-radius: 28px;
             background: transparent;
         }
         input[type="email"]::placeholder {
@@ -76,10 +82,15 @@
             width: 64px;
             height: 100%;
             border: none;
-            border-radius: 50px;
+            border-radius: 28px;
             background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
             cursor: pointer;
-
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button:hover {
+            background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
         }
         .image-container {
             width: 100%;
@@ -91,7 +102,7 @@
         }
         .error-icon {
             position: absolute;
-            right: 74px;
+            right: 70px;
             top: 50%;
             transform: translateY(-50%);
             display: none;
@@ -103,7 +114,7 @@
             text-align: left;
             padding-left: 1.5rem;
         }
-        .error-state input {
+        .error-state input[type="email"] {
             border-color: hsl(0, 93%, 68%);
         }
         .error-state .error-icon,
@@ -146,20 +157,10 @@
                 margin-bottom: 3rem;
             }
             .form-wrapper {
-                position: relative;
-                width: 100%;
-                max-width: 400px;
-            }
-            .input-wrapper {
-              display: grid;
-              grid-template-columns: 1fr auto auto;
-              align-items: center;
-              border: 1px solid hsl(0, 36%, 70%);
-              border-radius: 28px;
-            overflow: hidden;
+                margin: 0;
             }
             input[type="email"] {
-                padding: 1rem 2rem;
+                padding: 1rem 7rem 1rem 2rem;
             }
             button {
                 width: 100px;
@@ -183,11 +184,13 @@
         </div>
         <div class="content">
             <h1><span>We're</span><br>coming<br>soon</h1>
-            <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+            <p>Hello fellow shoppers! We're currently building our new<br/>fashion store. Add your email below to stay up-to-date with<br/> announcements and our launch deals.</p>
             <form class="form-wrapper" novalidate>
-                <input type="email" placeholder="Email Address" required>
-                <img src="icon-error.svg" alt="" class="error-icon">
-                <button type="submit"><img src="icon-arrow.svg" alt="Submit"></button>
+                <div class="input-wrapper">
+                    <input type="email" placeholder="Email Address" required>
+                    <img src="icon-error.svg" alt="" class="error-icon">
+                    <button type="submit"><img src="icon-arrow.svg" alt="Submit"></button>
+                </div>
                 <p class="error-message">Please provide a valid email</p>
             </form>
         </div>
@@ -201,11 +204,10 @@
             e.preventDefault();
             if (!email.validity.valid) {
                 form.classList.add('error-state');
-                errorMessage.style.display = 'block';
             } else {
                 form.classList.remove('error-state');
-                errorMessage.style.display = 'none';
                 alert('Email submitted successfully!');
+                email.value = '';
             }
         });
     </script>
